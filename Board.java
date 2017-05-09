@@ -16,6 +16,9 @@ public class Board
     public int checkMark(int x, int y){return board[y][x];}
     public void printBoard(){
 		for(int i = 0; i < board.length; i++){
-			for(int 
-    }
+			for(int j = 0; j < board[0].length; j++){
+				System.out.Print(board[i][j] + " ");
+			}
+			System.out.println();
+    	}
 }
