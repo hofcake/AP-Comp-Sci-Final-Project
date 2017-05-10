@@ -2,7 +2,7 @@ public class Board
 {
     public int[][] board;
     public static void newBoard(int size){
-        int[][] board = new int[size][size];
+        board = new int[size][size];
     }
     public void newMark(int x, int y, int type){board[y][x] = type;} //0 = nothing, 1 = x, 2 = O
     public void removeMark(int x, int y){board[y][x] = 0;}
