@@ -61,4 +61,22 @@ public class Board
 		}
 		return win;
     }
+	public boolean checkDiagonal(int sign){
+		boolean win = true;
+		int index = 0;
+		while(index < board.length){
+			if(board[index][index] != sign)
+				win = false;
+			index++;
+		}
+		if(win = true)
+			return true;
+		index = board.length-1;
+		while(index >= 0){
+			if(board[index][board[].length-1-index] != sign)
+				win = false;
+			index--;
+		}
+		return win;
+	}
 }
