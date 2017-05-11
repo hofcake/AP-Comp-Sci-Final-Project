@@ -14,7 +14,11 @@ public class Board
             }
         }
     }
-    public int checkMark(int x, int y){return board[y][x];}
+    public boolean checkMark(int x, int y){
+        if(board[y][x] == 0)
+            return true;
+        return false;
+    }
     public void printBoard(){
         for(int i = 0; i < board.length; i++){
             for(int j = 0; j < board[0].length; j++){
