@@ -9,7 +9,7 @@ public class Game
         {
             System.out.print("\f");
             System.out.print(userEntry);
-            System.out.print("Enter Letter to Guess or * to exit : ");
+            System.out.print("Enter the x and y coordinates of the space you would like to fill or * to exit : ");
             userEntry = keyboard.nextLine();
             //convert userEntry to be trimmed and all upper case
             userEntry = userEntry.trim().toUpperCase();
