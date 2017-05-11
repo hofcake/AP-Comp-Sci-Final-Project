@@ -3,7 +3,7 @@ public class Board
     public int[][] board;
     public final String alpha = "ABCDEFGHIJKLMNOPQRTUVWXYZ"; //possibly to be used later
     public void newBoard(int size){
-    board = new int[size][size];
+        board = new int[size][size];
     }
     public void newMark(int x, int y, int type){board[board.length-y-1][x] = type;} //0 = nothing, 1 = x, 2 = O
     public void removeMark(int x, int y){board[board.length-y-1][x] = 0;}
