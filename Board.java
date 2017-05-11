@@ -36,14 +36,14 @@ public class Board
         System.out.println("\n");
     }
     public boolean checkHorizontal(int sign){
-		boolean win = true;
-		for(int i = 0; i < board.length; i++){
-			win = true;
-			for(int j = 0; j < board[].length; j++){
-				if((board[i][j] == sign)&&(win))
-					win = true;
-				else
-					win = false;
+	boolean win = true;
+	for(int i = 0; i < board.length; i++){
+		win = true;
+		for(int j = 0; j < board[].length; j++){
+			if((board[i][j] == sign)&&(win))
+				win = true;
+			else
+				win = false;
 			}
 		}
 		return win;
