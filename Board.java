@@ -39,7 +39,7 @@ public class Board
 	boolean win = true;
 	for(int i = 0; i < board.length; i++){
 		win = true;
-		for(int j = 0; j < board[].length; j++){
+		for(int j = 0; j < board[0].length; j++){
 			if((board[i][j] == sign)&&(win))
 				win = true;
 			else
@@ -52,7 +52,7 @@ public class Board
 	boolean win = true;
 	for(int i = 0; i < board.length; i++){
 		win = true;
-		for(int j = 0; j < board[].length; j++){
+		for(int j = 0; j < board[0].length; j++){
 			if((board[j][i] == sign)&&(win))
 				win = true;
 			else
