@@ -69,7 +69,7 @@ public class Board
 				win = false;
 			index++;
 		}
-		if(win = true)
+		if(win == true)
 			return true;
 		index = board.length-1;
 		while(index >= 0){
