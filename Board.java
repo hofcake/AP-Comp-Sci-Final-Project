@@ -48,4 +48,17 @@ public class Board
 		}
 		return win;
     }
+	public boolean checkVertical(int sign){
+	boolean win = true;
+	for(int i = 0; i < board.length; i++){
+		win = true;
+		for(int j = 0; j < board[].length; j++){
+			if((board[j][i] == sign)&&(win))
+				win = true;
+			else
+				win = false;
+			}
+		}
+		return win;
+    }
 }
