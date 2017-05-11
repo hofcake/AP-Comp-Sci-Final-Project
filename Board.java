@@ -86,4 +86,5 @@ public class Board
         }
         return win;
     }
+    public static boolean checkForWin(int sign){return(checkDiagnal(sign) || checkVertical(sign) || checkHorizontal(sign));}
 }
