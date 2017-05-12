@@ -98,4 +98,55 @@ public class Board
         }
         return true;
     }
+    
+        public int checkHorizontalAlmost(int sign){
+            int row = 0;
+            int column = 0;
+            for(int j = 0; j < board[0].length; j++){
+                if((board[1][j] == sign))
+                    row = 1;
+                    column = j;
+                    return row + column;
+            }
+            for(int j = 0; j < board[0].length; j++){
+                if((board[board.length - 1][j] == sign))
+                    row = board.length - 1;
+                    column = j;
+                    return row + column;
+            }
+            return void;
+    }
+
+    public boolean checkVertical(int sign){
+        boolean win = true;
+        for(int i = 0; i < board.length; i++){
+            win = true;
+            for(int j = 0; j < board[0].length; j++){
+                if((board[j][i] == sign)&&(win))
+                    win = true;
+                else
+                    win = false;
+            }
+        }
+        return win;
+    }
+
+    public boolean checkDiagonal(int sign){
+        boolean win = true;
+        int index = 0;
+        while(index < board.length){
+            if(board[index][index] != sign)
+                win = false;
+            index++;
+        }
+        if(win == true)
+            return true;
+        index = board.length-1;
+        while(index >= 0){
+            if(board[index][board[0].length-1-index] != sign)
+                win = false;
+            index--;
+        }
+        return win;
+    }
 }
