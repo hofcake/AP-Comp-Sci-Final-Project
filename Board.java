@@ -86,7 +86,9 @@ public class Board
         }
         return win;
     }
+    
     public static boolean checkForWin(int sign){return(checkDiagnal(sign) || checkVertical(sign) || checkHorizontal(sign));}
+    
     public boolean isFull(){
         for(int i = 0; i < board.length; i++){
             for(int j = 0; j < board[0].length; j++){
