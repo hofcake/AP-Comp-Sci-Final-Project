@@ -22,7 +22,7 @@ public class Game
 			while(!gameBoard.checkForWin){
 				gameBoard.printBoard();
 				//INSERT AI COMMANDS
-				System.out.println("Choose your 
+				promptForInput();
 			}
 		}
 		else{
