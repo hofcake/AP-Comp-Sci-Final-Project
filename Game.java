@@ -12,7 +12,7 @@ public class Game
             System.out.print(userEntry);
             System.out.print("Enter the x and y coordinates of the space you would like to fill or * to exit : ");
             userEntry = keyboard.nextLine();
-            userEntry = userEntry.trim().toUpperCase();//convert userEntry to be trimmed and all upper case
+		String[] coordinatesArray = userEntry.split(",");
         }
         System.out.print("\nGood Bye!");
     }
