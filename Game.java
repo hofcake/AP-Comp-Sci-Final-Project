@@ -10,21 +10,22 @@ public class Game
 	userEntry = keyboard.nextLine();
 	Board gameBoard = new Board(userEntry);
         while(!userEntry.equals("*")){
+	while (acceptable != true){
             System.out.print("\f");
             System.out.print(userEntry);
             System.out.print("Enter the x and y coordinates of the space you would like to fill or * to exit : ");
             userEntry = keyboard.nextLine();
 		coordArray = userEntry.split(",");
-		while (acceptable != true){
 		for (x = 0; x <=1; x ++){
 				if(coordArray[x] > gameBoard.size()){
 				System.out.println("These coordinates do not exist. Please enter new coordinates");
-				System.out.println
 				}
+				else
+				{
+				acceptable = true;
 				}
 		}
         }
-        System.out.print("\nGood Bye!");
     }
 	public void oneGame(int size, boolean aiFirst){ //true is the AI starting first, false is the human
 		Board gameBoard = new Board(size);
