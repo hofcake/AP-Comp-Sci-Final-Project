@@ -3,6 +3,7 @@ public class Game
 	int[] coordArray = new int[2];
 	public void promptForInput()
     {
+	boolean acceptable = false;
         //Declare and initialize a scanner object called keyboard
 	Scanner keyboard = new Scanner(System.in);
     String userEntry = "";
@@ -14,6 +15,14 @@ public class Game
             System.out.print("Enter the x and y coordinates of the space you would like to fill or * to exit : ");
             userEntry = keyboard.nextLine();
 		coordArray = userEntry.split(",");
+		while (acceptable != true){
+		for (x = 0; x <=1; x ++){
+				if(coordArray[x] > gameBoard.size()){
+				System.out.println("These coordinates do not exist. Please enter new coordinates");
+				System.out.println
+				}
+				}
+		}
         }
         System.out.print("\nGood Bye!");
     }
