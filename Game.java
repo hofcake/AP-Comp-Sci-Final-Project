@@ -43,6 +43,6 @@ public class Game
 			while(!gameBoard.isWinner(){
 				
 		}
-		}
+				  }
 	}
 }
