@@ -3,10 +3,10 @@ public class Game
 	public void promptForInput()
     {
         //Declare and initialize a scanner object called keyboard
-		Scanner keyboard = new Scanner(System.in);
+	Scanner keyboard = new Scanner(System.in);
         String userEntry = "";
-		userEntry = keyboard.nextLine();
-		Board gameBoard = new Board(userEntry);
+	userEntry = keyboard.nextLine();
+	Board gameBoard = new Board(userEntry);
         while(!userEntry.equals("*")){
             System.out.print("\f");
             System.out.print(userEntry);
