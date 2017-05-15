@@ -4,7 +4,7 @@ public class Game
     {
         //Declare and initialize a scanner object called keyboard
 	Scanner keyboard = new Scanner(System.in);
-        String userEntry = "";
+    String userEntry = "";
 	userEntry = keyboard.nextLine();
 	Board gameBoard = new Board(userEntry);
         while(!userEntry.equals("*")){
@@ -15,5 +15,20 @@ public class Game
             userEntry = userEntry.trim().toUpperCase();//convert userEntry to be trimmed and all upper case
         }
         System.out.print("\nGood Bye!");
-    }  
+    }
+	/*public void oneGame(int size, boolean aiFirst){ //true is the AI starting first, false is the human
+		Board gameBoard = new Board(size);
+		if(aiFirst){
+			while(!gameBoard.checkForWin){
+				gameBoard.printBoard();
+				//INSERT AI COMMANDS
+				System.out.println("Choose your 
+			}
+		}
+		else{
+			while(!gameBoard.checkForWin){
+				
+		}
+		}
+	}*/
 }
