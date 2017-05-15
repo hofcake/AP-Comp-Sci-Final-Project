@@ -1,5 +1,6 @@
 public class Game
 {
+	int[] coordArray = new int[2];
 	public void promptForInput()
     {
         //Declare and initialize a scanner object called keyboard
@@ -12,7 +13,7 @@ public class Game
             System.out.print(userEntry);
             System.out.print("Enter the x and y coordinates of the space you would like to fill or * to exit : ");
             userEntry = keyboard.nextLine();
-		String[] coordinatesArray = userEntry.split(",");
+		coordArray = userEntry.split(",");
         }
         System.out.print("\nGood Bye!");
     }
