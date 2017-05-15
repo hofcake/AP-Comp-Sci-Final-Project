@@ -98,11 +98,29 @@ public class Board
         }
         return true;
     }
-    
-        public int checkHorizontalAlmost(int sign){
-            int row = 0;
-            int column = 0;
-            for(int j = 0; j < board[0].length; j++){
+	
+    public int getWinner(){
+		if(checkForWin(1))
+			return 1;
+		else if(checkForWin(2))
+			return 2;
+		else
+			return 0;
+	}
+	
+	public boolean isWinner(){
+		if(checkForWin(1))
+			return true;
+		else if(checkForWin(2))
+			return true;
+		else
+			return false;
+	}
+	
+    public int checkHorizontalAlmost(int sign){
+        int row = 0;
+        int column = 0;
+        	for(int j = 0; j < board[0].length; j++){
                 if((board[1][j] == sign))
                     row = 1;
                     column = j;
