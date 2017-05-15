@@ -33,16 +33,19 @@ public class Game
 			while(!gameBoard.isWinner()){
 				gameBoard.printBoard();
 				//INSERT AI COMMANDS
+				gameBoard.printBoard();
 				promptForInput();
 				gameBoard.newMark(coordArray[0], coordArray[1]);
-			}
-			
 			}
 		}
 		else{
 			while(!gameBoard.isWinner(){
-				
+				gameBoard.printBoard();
+				promptForInput();
+				gameBoard.newMark(coordArray[0], coordArray[1]);
+				gameBoard.printBoard();
+				//INSERT AI COMMANDS		
+			}
 		}
-				  }
 	}
 }
