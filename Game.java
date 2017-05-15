@@ -26,19 +26,22 @@ public class Game
         }
         System.out.print("\nGood Bye!");
     }
-	/*public void oneGame(int size, boolean aiFirst){ //true is the AI starting first, false is the human
+	public void oneGame(int size, boolean aiFirst){ //true is the AI starting first, false is the human
 		Board gameBoard = new Board(size);
 		if(aiFirst){
-			while(!gameBoard.checkForWin){
+			while(!gameBoard.isWinner()){
 				gameBoard.printBoard();
 				//INSERT AI COMMANDS
 				promptForInput();
+				gameBoard.newMark(coordArray[0], coordArray[1]);
+			}
+			
 			}
 		}
 		else{
-			while(!gameBoard.checkForWin){
+			while(!gameBoard.isWinner(){
 				
 		}
 		}
-	}*/
+	}
 }
