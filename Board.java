@@ -118,7 +118,7 @@ public class Board
 	}
 	
     public int checkHorizontalAlmost(int sign){
-        boolean almost = false;
+        int almost = 0;
 	int row = 0;
         int column = 0;
         	for(int j = 0; j < board[0].length; j++){
@@ -136,8 +136,8 @@ public class Board
             return almost;
     }
 
-    public boolean checkVerticalAlmost(int sign){
-        boolean almost = false;
+    public int checkVerticalAlmost(int sign){
+        int almost = 0;
 	int row = 0;
         int column = 0;
         	for(int i = 0; i < board[0].length; i++){
@@ -155,7 +155,12 @@ public class Board
             return almost;
     }
 	
-public static boolean checkForAlmost(int sign){checkVerticalAlmost(sign) || checkHorizontalAlmost(sign));}
+public static int checkForAlmost(int sign){
+	if (checkVerticalAlmost(sign)) != 0){
+		return checkVerticalAlmost(sign);}
+	else{
+	return checkHorizontalAlmost(sign));}
+	}
 	
 }
  
