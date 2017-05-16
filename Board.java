@@ -87,7 +87,7 @@ public class Board
         return win;
     }
     
-    public static boolean checkForWin(int sign){return(checkDiagnal(sign) || checkVertical(sign) || checkHorizontal(sign));}
+    public boolean checkForWin(int sign){return(checkDiagonal(sign) || checkVertical(sign) || checkHorizontal(sign));}
     
     public boolean isFull(){
         for(int i = 0; i < board.length; i++){
@@ -155,11 +155,11 @@ public class Board
             return almost;
     }
 	
-public static int checkForAlmost(int sign){
-	if (checkVerticalAlmost(sign)) != 0){
+public int checkForAlmost(int sign){
+	if (checkVerticalAlmost(sign) != 0){
 		return checkVerticalAlmost(sign);}
 	else{
-	return checkHorizontalAlmost(sign));}
+	return checkHorizontalAlmost(sign);}
 	}
 	
 }
