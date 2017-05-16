@@ -118,7 +118,8 @@ public class Board
 	}
 	
     public int checkHorizontalAlmost(int sign){
-        int row = 0;
+        boolean almost = false;
+	int row = 0;
         int column = 0;
         	for(int j = 0; j < board[0].length; j++){
                 if((board[1][j] == sign))
@@ -127,45 +128,34 @@ public class Board
                     return row + column;
             }
             for(int j = 0; j < board[0].length; j++){
-                if((board[board.length - 1][j] == sign))
-                    row = board.length - 1;
+                if((board[board.length - 2][j] == sign))
+                    row = board.length - 2;
                     column = j;
                     return row + column;
             }
-            return void;
+            return almost;
     }
 
-    public boolean checkVertical(int sign){
-        boolean win = true;
-        for(int i = 0; i < board.length; i++){
-            win = true;
-            for(int j = 0; j < board[0].length; j++){
-                if((board[j][i] == sign)&&(win))
-                    win = true;
-                else
-                    win = false;
+    public boolean checkVerticalAlmost(int sign){
+        boolean almost = false;
+	int row = 0;
+        int column = 0;
+        	for(int i = 0; i < board[0].length; i++){
+                if((board[i][1] == sign))
+                    row = i;
+                    column = 1;
+                    return row + column;
             }
-        }
-        return win;
+            for(int i = 0; i < board[0].length; i++){
+                if((board[i][board.length - 2] == sign))
+                    row = i;
+                    column = board.length - 2;
+                    return row + column;
+            }
+            return almost;
     }
-
-    public boolean checkDiagonal(int sign){
-        boolean win = true;
-        int index = 0;
-        while(index < board.length){
-            if(board[index][index] != sign)
-                win = false;
-            index++;
-        }
-        if(win == true)
-            return true;
-        index = board.length-1;
-        while(index >= 0){
-            if(board[index][board[0].length-1-index] != sign)
-                win = false;
-            index--;
-        }
-        return win;
-    }
+	
+public static boolean checkForAlmost(int sign){checkVerticalAlmost(sign) || checkHorizontalAlmost(sign));}
+	
 }
  
