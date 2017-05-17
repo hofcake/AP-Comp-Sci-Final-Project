@@ -160,7 +160,8 @@ public int checkForAlmost(int sign){
 		return checkVerticalAlmost(sign);}
 	else{
 	return checkHorizontalAlmost(sign);}
-	}
+	return 0;
+}
 	
 }
  
