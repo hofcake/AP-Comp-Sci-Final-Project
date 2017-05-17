@@ -2,15 +2,20 @@ public class AI
 {
   
   public int play(){
+	int coords = 0;
+	if (defense() != 0){
+		coords = defense();
+	}
 	
 	}
 	
-public void defence(){
+public int defence(){
 	if (gameBoard.checkForAlmost(1) != 0){
 		int coordinates = gameBoard.checkForAlmost(1);
-		int x = coordinates.substring(0, 1);
-		int y = coordinates.substring(1, 2);
-		
+		return coordinates;
+	else{
+		return 0;
+	}
 		}
 	
 	
