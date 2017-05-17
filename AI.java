@@ -5,4 +5,9 @@ public class AI
 	
 	}
 	
+public void defence(){
+	gameBoard.checkAlmost(1);
+	
+}
+	
 }
