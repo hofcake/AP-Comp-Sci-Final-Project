@@ -5,10 +5,10 @@ public class AI
 	int coords = 0;
 	int[] coordsArray = new int[2];
 	if (defense(gameBoard) != 0){
-		coords = defense();
+		coords = defense(gameBoard);
 	}
 	else if (offense(gameBoard) != 0){
-		coords = offense();
+		coords = offense(gameBoard);
 	}
 	else{
 		coords = 23;
