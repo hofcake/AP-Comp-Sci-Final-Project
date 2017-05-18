@@ -31,7 +31,7 @@ public class Game
 		if(aiFirst){
 			while(!gameBoard.isWinner()){
 				gameBoard.printBoard();
-				gameBoard.newArrayMark(AI.play(gameBoard), 2);
+				gameBoard.newArrayMark(AI.play(), 2);
 				gameBoard.printBoard();
 				promptForInput();
 				gameBoard.newMark(coordArray[0], coordArray[1]);
@@ -43,7 +43,7 @@ public class Game
 				promptForInput();
 				gameBoard.newMark(coordArray[0], coordArray[1]);
 				gameBoard.printBoard();
-				gameBoard.newArrayMark(AI.play(gameBoard), 2);		
+				gameBoard.newArrayMark(AI.play(), 2);		
 			}
 		}
 	}
