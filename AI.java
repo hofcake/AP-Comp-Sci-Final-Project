@@ -6,6 +6,9 @@ public class AI
 	if (defense() != 0){
 		coords = defense();
 	}
+	else if (offense != 0){
+		coords = offense();
+	}
 }
 	
 	public int defense(){
@@ -13,6 +16,15 @@ public class AI
 		int coordinates = gameBoard.checkForAlmost(1);
 		return coordinates;
 	}
-		else{return 0;}
+		else{
+			return 0;}
 }
+	public int offense(){
+	if (gameBoard.checkForAlmost(2) != 0){
+		int coordinates = gameBoard.checkForAlmost(2);
+		return coordinates;
+	}
+		else{
+			return 0;}
+	}
 }
