@@ -1,6 +1,7 @@
 public class AI
 {
-  public int[] play(){ 
+  public int[] play(){
+	
 	int coords = 0;
 	int[] coordsArray = new int[2];
 	if (defense() != 0){
