@@ -1,6 +1,6 @@
 public class AI
 {
-  public int play(){ 
+  public int[] play(){ 
 	int coords = 0;
 	int[] coordsArray = new int[2];
 	if (defense() != 0){
@@ -12,6 +12,8 @@ public class AI
 	else{
 		coords = 01;
 	}
+	coordsArray = makeCoordArray(coords);
+	return coordsArray;
 }
 	
 	public int defense(){
@@ -32,9 +34,11 @@ public class AI
 			return 0;}
 }
 	
-	public int makeCoordArray(int coordinates){
+	public int[] makeCoordArray(int coordinates){
 		int[] coordinateArray = new int[2];
-		coordinates.substring(0,1);
+		coordinateArray[0] = coordinates.substring(0,1);
+		coordinateArray[1] = coordinates.substring(1,2);
+		return coordinateArray;
 		}
 	}
 }
