@@ -2,6 +2,7 @@ public class AI
 {
   public int play(){ 
 	int coords = 0;
+	int[] coordsArray = new int[2];
 	if (defense() != 0){
 		coords = defense();
 	}
@@ -32,10 +33,8 @@ public class AI
 }
 	
 	public int makeCoordArray(int coordinates){
-		int[] coordinateArray = 
-		for (x = 0; x <= 1; x ++)
-		{
-			
+		int[] coordinateArray = new int[2];
+		coordinates.substring(0,1);
 		}
 	}
 }
