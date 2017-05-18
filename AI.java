@@ -9,11 +9,11 @@ public class AI
     public int[] play(){
         int coords = 0;
         int[] coordsArray = new int[2];
-        if (defense(gameBoard) != 0){
-            coords = defense(gameBoard);
+        if (defense() != 0){
+            coords = defense();
         }
-        else if (offense(gameBoard) != 0){
-            coords = offense(gameBoard);
+        else if (offense() != 0){
+            coords = offense();
         }
         else{
             coords = 23;
