@@ -11,7 +11,7 @@ public class AI
 		coords = offense();
 	}
 	else{
-		coords = 01;
+		coords = 23;
 	}
 	coordsArray = makeCoordArray(coords);
 	return coordsArray;
