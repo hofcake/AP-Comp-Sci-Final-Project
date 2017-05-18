@@ -1,13 +1,13 @@
 public class AI
 {
   public int[] play(int[][] board){
-	
+	int[][] gameBoard = board;
 	int coords = 0;
 	int[] coordsArray = new int[2];
-	if (defense() != 0){
+	if (defense(gameBoard) != 0){
 		coords = defense();
 	}
-	else if (offense != 0){
+	else if (offense(gameBoard) != 0){
 		coords = offense();
 	}
 	else{
@@ -17,7 +17,7 @@ public class AI
 	return coordsArray;
 }
 	
-	public int defense(){
+	public int defense(int gameBoard){
 	if (gameBoard.checkForAlmost(1) != 0){
 		int coordinates = gameBoard.checkForAlmost(1);
 		return coordinates;
@@ -26,7 +26,7 @@ public class AI
 			return 0;}
 }
 	
-	public int offense(){
+	public int offense(int gameBoard){
 	if (gameBoard.checkForAlmost(2) != 0){
 		int coordinates = gameBoard.checkForAlmost(2);
 		return coordinates;
@@ -41,5 +41,4 @@ public class AI
 		coordinateArray[1] = coordinates.substring(1,2);
 		return coordinateArray;
 		}
-	}
 }
