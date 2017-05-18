@@ -1,7 +1,6 @@
 public class AI
 {
-  
-  public int play(){
+  public int play(){ 
 	int coords = 0;
 	if (defense() != 0){
 		coords = defense();
@@ -22,6 +21,7 @@ public class AI
 		else{
 			return 0;}
 }
+	
 	public int offense(){
 	if (gameBoard.checkForAlmost(2) != 0){
 		int coordinates = gameBoard.checkForAlmost(2);
@@ -29,5 +29,13 @@ public class AI
 	}
 		else{
 			return 0;}
+}
+	
+	public int makeCoordArray(int coordinates){
+		int[] coordinateArray = 
+		for (x = 0; x <= 1; x ++)
+		{
+			
+		}
 	}
 }
