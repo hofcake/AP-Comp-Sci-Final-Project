@@ -24,6 +24,7 @@ public class Game
 			}
 		}
 	}
+	}
 	public void oneGame(int size, boolean aiFirst){ //true is the AI starting first, false is the human
 		AI theAI = new AI();
 		Board gameBoard = new Board(size);
@@ -37,7 +38,7 @@ public class Game
 			}
 		}
 		else{
-			while(!gameBoard.isWinner(){
+			while(!gameBoard.isWinner()){
 				gameBoard.printBoard();
 				promptForInput();
 				gameBoard.newMark(coordArray[0], coordArray[1]);
