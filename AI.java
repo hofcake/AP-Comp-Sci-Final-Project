@@ -9,6 +9,9 @@ public class AI
 	else if (offense != 0){
 		coords = offense();
 	}
+	else{
+		coords = 01;
+	}
 }
 	
 	public int defense(){
