@@ -8,7 +8,7 @@ public class Board
 
     public void newMark(int x, int y, int type){board[board.length-y-1][x] = type;} //0 = nothing, 1 = x, 2 = O
     public void removeMark(int x, int y){board[board.length-y-1][x] = 0;}
-	public void newArrayMark(int[] input, int type){board[board.length-input[1]-1][input[0] = type;}
+	public void newArrayMark(int[] input, int type){board[board.length-input[1]-1][input[0]] = type;}
 
     public void clear(){
         for(int i = 0; i < board.length; i++){
@@ -161,7 +161,6 @@ public int checkForAlmost(int sign){
 		return checkVerticalAlmost(sign);}
 	else{
 	return checkHorizontalAlmost(sign);}
-	return 0;
 }
 	
 }
