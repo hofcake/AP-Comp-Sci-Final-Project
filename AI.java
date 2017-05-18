@@ -17,7 +17,7 @@ public class AI
 	return coordsArray;
 }
 	
-	public int defense(int gameBoard){
+	public int defense(int[][] gameBoard){
 	if (gameBoard.checkForAlmost(1) != 0){
 		int coordinates = gameBoard.checkForAlmost(1);
 		return coordinates;
@@ -26,7 +26,7 @@ public class AI
 			return 0;}
 }
 	
-	public int offense(int gameBoard){
+	public int offense(int[][] gameBoard){
 	if (gameBoard.checkForAlmost(2) != 0){
 		int coordinates = gameBoard.checkForAlmost(2);
 		return coordinates;
