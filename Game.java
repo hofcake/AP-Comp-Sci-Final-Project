@@ -25,11 +25,12 @@ public class Game
 		}
 	}
 	public void oneGame(int size, boolean aiFirst){ //true is the AI starting first, false is the human
+		AI theAI = new AI();
 		Board gameBoard = new Board(size);
 		if(aiFirst){
 			while(!gameBoard.isWinner()){
 				gameBoard.printBoard();
-				//INSERT AI COMMANDS
+				AI.play(gameBoard);
 				gameBoard.printBoard();
 				promptForInput();
 				gameBoard.newMark(coordArray[0], coordArray[1]);
@@ -41,7 +42,7 @@ public class Game
 				promptForInput();
 				gameBoard.newMark(coordArray[0], coordArray[1]);
 				gameBoard.printBoard();
-				//INSERT AI COMMANDS		
+				AI.play(gameBoard);		
 			}
 		}
 	}
