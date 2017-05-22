@@ -7,24 +7,27 @@ public class AI
     }
 
     public int[] play(){
+        int[] test = new int[2];
         int[] coords = new int[2];
-        if (defense() != 0){
+        test = defense();
+        if (test[0] != -1){
             coords = defense();
+            return coords;
         }
-        else if (offense() != 0){
+        if (offense[1] != -1){
             coords = offense();
+            return coords;
         }
-        else{
-            coords[0] = 2;
-            coords[1] = 1;
-        }
+        coords[0] = 2;
+        coords[1] = 1;
         return coords;
     }
 
     public int[] defense(){
         int[] coordinates = new int[2];
-        if (gameBoard.checkForAlmost(1) != 0){
-            int[] coordinates = gameBoard.checkForAlmost(1);
+        coordinates = gameBoard.checkForAlmost(1);
+        if (coordinates[0] != -1){
+            coordinates = gameBoard.checkForAlmost(1);
             return coordinates;
         }
         coordinates[0] = -1;
@@ -34,7 +37,8 @@ public class AI
 
     public int[] offense(){
         int[] coordinates = new int[2];
-        if (gameBoard.checkForAlmost(2) != 0){
+        coordinates = gameBoard.checkForAlmost(1);
+        if (coordinates[0] != -1){
             int coordinates = gameBoard.checkForAlmost(2);
             return coordinates;
         }
