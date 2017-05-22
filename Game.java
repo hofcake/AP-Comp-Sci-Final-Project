@@ -1,7 +1,7 @@
 public class Game
 {
-	int[] coordArray = new int[2];
-	public void promptForInput(){
+	public int[] promptForInput(){
+		int[] coordArray = new int[2];
 		boolean acceptable = false;
 		Scanner keyboard = new Scanner(System.in);//Declare and initialize a scanner object called keyboard
 		String userEntry = "";
@@ -20,6 +20,7 @@ public class Game
 					}
 					else{
 						acceptable = true;
+						return coordArray;
 					}
 			}
 		}
@@ -33,15 +34,13 @@ public class Game
 				gameBoard.printBoard();
 				gameBoard.newArrayMark(AI.play(), 2);
 				gameBoard.printBoard();
-				promptForInput();
-				gameBoard.newMark(coordArray[0], coordArray[1]);
+				gameBoard.newArrayMark(promptForInput(),1);
 			}
 		}
 		else{
 			while(!gameBoard.isWinner()){
 				gameBoard.printBoard();
-				promptForInput();
-				gameBoard.newMark(coordArray[0], coordArray[1]);
+				gameBoard.newArrayMark(promptForInput(),1);
 				gameBoard.printBoard();
 				gameBoard.newArrayMark(AI.play(), 2);		
 			}
