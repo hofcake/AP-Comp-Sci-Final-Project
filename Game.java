@@ -27,7 +27,8 @@ public class Game
 	}
 	}
 	public void oneGame(int size, boolean aiFirst){ //true is the AI starting first, false is the human
-		Board gameBoard = new Board(size);
+		Board gameBoard = new Board();
+		gameBoard.newBoard(size);
 		AI theAI = new AI(gameBoard);
 		if(aiFirst){
 			while(!gameBoard.isWinner()){
