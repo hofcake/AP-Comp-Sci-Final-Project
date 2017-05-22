@@ -172,7 +172,8 @@ public class Board
     }
 	
 public int checkForAlmost(int sign){
-	if (checkVerticalAlmost(sign) != 0){
+	int[] test1 = checkVerticalAlmost(sign);
+	if (test[0] != -1){
 		return checkVerticalAlmost(sign);}
 	else{
 	return checkHorizontalAlmost(sign);}
