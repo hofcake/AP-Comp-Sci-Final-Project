@@ -8,7 +8,6 @@ public class AI
 
     public int[] play(){
         int[] coords = new int[2];
-        int[] coordsArray = new int[2];
         if (defense() != 0){
             coords = defense();
         }
@@ -16,34 +15,32 @@ public class AI
             coords = offense();
         }
         else{
-            coords = 23;
+            coords[0] = 2;
+            coords[1] = 1;
         }
-        coordsArray = makeCoordArray(coords);
-        return coordsArray;
+        return coords;
     }
 
     public int[] defense(){
+        int[] coordinates = new int[2];
         if (gameBoard.checkForAlmost(1) != 0){
             int[] coordinates = gameBoard.checkForAlmost(1);
             return coordinates;
         }
-        else{
-            return 0;}
+        coordinates[0] = -1;
+        coordinates[1] = -1;
+        return coordinates;
     }
 
-    public int offense(){
+    public int[] offense(){
+        int[] coordinates = new int[2];
         if (gameBoard.checkForAlmost(2) != 0){
             int coordinates = gameBoard.checkForAlmost(2);
             return coordinates;
         }
-        else{
-            return 0;}
+        coordinates[0] = -1;
+        coordinates[1] = -1;
+        return coordinates;
     }
 
-    public int[] makeCoordArray(int coordinates){
-        int[] coordinateArray = new int[2];
-        coordinateArray[0] = coordinates.substring(0,1);
-        coordinateArray[1] = coordinates.substring(1,2);
-        return coordinateArray;
-    }
 }
