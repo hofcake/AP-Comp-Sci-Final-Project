@@ -171,9 +171,9 @@ public class Board
             return almost;
     }
 	
-public int checkForAlmost(int sign){
+public int[] checkForAlmost(int sign){
 	int[] test1 = checkVerticalAlmost(sign);
-	if (test[0] != -1){
+	if (test1[0] != -1){
 		return checkVerticalAlmost(sign);}
 	else{
 	return checkHorizontalAlmost(sign);}
