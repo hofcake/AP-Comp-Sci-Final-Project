@@ -40,7 +40,7 @@ public class AI
         int[] coordinates = new int[2];
         coordinates = gameBoard.checkForAlmost(1);
         if (coordinates[0] != -1){
-            int coordinates = gameBoard.checkForAlmost(2);
+            coordinates = gameBoard.checkForAlmost(2);
             return coordinates;
         }
         coordinates[0] = -1;
