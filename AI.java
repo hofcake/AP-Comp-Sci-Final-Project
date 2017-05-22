@@ -22,7 +22,7 @@ public class AI
         return coordsArray;
     }
 
-    public int defense(){
+    public int[] defense(){
         if (gameBoard.checkForAlmost(1) != 0){
             int[] coordinates = gameBoard.checkForAlmost(1);
             return coordinates;
