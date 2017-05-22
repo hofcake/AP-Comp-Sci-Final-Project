@@ -7,7 +7,7 @@ public class AI
     }
 
     public int[] play(){
-        int coords = 0;
+        int[] coords = new int[2];
         int[] coordsArray = new int[2];
         if (defense() != 0){
             coords = defense();
@@ -24,7 +24,7 @@ public class AI
 
     public int defense(){
         if (gameBoard.checkForAlmost(1) != 0){
-            int coordinates = gameBoard.checkForAlmost(1);
+            int[] coordinates = gameBoard.checkForAlmost(1);
             return coordinates;
         }
         else{
