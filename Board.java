@@ -139,6 +139,8 @@ public class Board
 		    return almost;
 		}
             }
+	    almost[0] = -1;
+	    almost[1] = -1;
             return almost;
     }
 
@@ -164,6 +166,8 @@ public class Board
 	 	    return almost;
 		}
             }
+	    almost[0] = -1;
+	    almost[1] = -1;
             return almost;
     }
 	
