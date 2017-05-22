@@ -119,7 +119,7 @@ public class Board
 	}
 	
     public int[] checkHorizontalAlmost(int sign){
-        int almost = 0;
+        int[] almost = new int[2];
 	int row = 0;
         int column = 0;
         	for(int j = 0; j < board[0].length; j++){
