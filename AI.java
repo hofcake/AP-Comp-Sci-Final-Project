@@ -14,7 +14,8 @@ public class AI
             coords = defense();
             return coords;
         }
-        if (offense[1] != -1){
+        test = offense();
+        if (test[1] != -1){
             coords = offense();
             return coords;
         }
