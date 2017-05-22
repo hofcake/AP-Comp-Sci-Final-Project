@@ -17,7 +17,11 @@ public class Board
             }
         }
     }
-
+	
+	public int size(){
+		return board.length;	
+	}
+	
     public boolean checkMark(int x, int y){
         if(board[y][x] == 0)
             return true;
