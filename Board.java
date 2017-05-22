@@ -118,7 +118,7 @@ public class Board
 			return false;
 	}
 	
-    public int checkHorizontalAlmost(int sign){
+    public int[] checkHorizontalAlmost(int sign){
         int almost = 0;
 	int row = 0;
         int column = 0;
@@ -126,32 +126,43 @@ public class Board
                 if((board[1][j] == sign))
                     row = 1;
                     column = j;
-                    return row + column;
+                    almost[0] = row;
+		    almost[1] = column;
+		    return almost;
             }
             for(int j = 0; j < board[0].length; j++){
-                if((board[board.length - 2][j] == sign))
+                if((board[board.length - 2][j] == sign)){
                     row = board.length - 2;
                     column = j;
-                    return row + column;
+		    almost[0] = row;
+		    almost[1] = column;
+		    return almost;
+		}
             }
             return almost;
     }
 
-    public int checkVerticalAlmost(int sign){
-        int almost = 0;
+    public int[] checkVerticalAlmost(int sign){
+        int[] almost = new int[2];
 	int row = 0;
         int column = 0;
         	for(int i = 0; i < board[0].length; i++){
-                if((board[i][1] == sign))
+                if((board[i][1] == sign)){
                     row = i;
                     column = 1;
-                    return row + column;
+		    almost[0] = row;
+		    almost[1] = column;
+		    return almost;
+		}
             }
             for(int i = 0; i < board[0].length; i++){
-                if((board[i][board.length - 2] == sign))
+                if((board[i][board.length - 2] == sign)){
                     row = i;
                     column = board.length - 2;
-                    return row + column;
+		    almost[0] = row;
+		    almost[1] = column;
+	 	    return almost;
+		}
             }
             return almost;
     }
