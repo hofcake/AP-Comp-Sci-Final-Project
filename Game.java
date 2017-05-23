@@ -33,7 +33,6 @@ public class Game
         AI theAI = new AI(gameBoard);
         if(aiFirst){
             while(!gameBoard.isWinner()){
-                gameBoard.printBoard();
                 gameBoard.newArrayMark(theAI.play(), 2);
                 gameBoard.printBoard();
                 gameBoard.newArrayMark(promptForInput(gameBoard), 1);
@@ -43,7 +42,6 @@ public class Game
             while(!gameBoard.isWinner()){
                 gameBoard.printBoard();
                 gameBoard.newArrayMark(promptForInput(gameBoard),1);
-                gameBoard.printBoard();
                 gameBoard.newArrayMark(theAI.play(), 2);
             }
         }
