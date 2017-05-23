@@ -1,11 +1,11 @@
 import java.util.*;
 public class Game
-{
+{ 
+    Scanner keyboard = new Scanner(System.in);
     public int[] promptForInput(Board gameBoard){
         int[] coordArray = new int[2];
         int counter = 0;
         boolean acceptable = false;
-        Scanner keyboard = new Scanner(System.in);//Declare and initialize a scanner object called keyboard
         String userEntry = "";
         String[] entryArray;
         userEntry = keyboard.nextLine();
@@ -33,7 +33,7 @@ public class Game
         gameBoard.newBoard(size);
         AI theAI = new AI(gameBoard);
         if(aiFirst){
-            while(gameBoard.isWinner() != true){
+            while(!gameBoard.isWinner()){
                 gameBoard.printBoard();
                 gameBoard.newArrayMark(theAI.play(), 2);
                 gameBoard.printBoard();
@@ -41,7 +41,7 @@ public class Game
             }
         }
         else{
-            while(!gameBoard.isWinner() != true){
+            while(!gameBoard.isWinner()){
                 gameBoard.printBoard();
                 gameBoard.newArrayMark(promptForInput(gameBoard),1);
                 gameBoard.printBoard();
