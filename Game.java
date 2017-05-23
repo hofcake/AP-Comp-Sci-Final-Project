@@ -45,6 +45,7 @@ public class Game
                 gameBoard.newArrayMark(theAI.play(), 2);
             }
         }
+        gameBoard.printBoard();
         System.out.print("you win");
     }
 }
