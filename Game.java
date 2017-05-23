@@ -10,8 +10,6 @@ public class Game
         String[] entryArray;
         userEntry = keyboard.nextLine();
         while (acceptable == false){
-            System.out.print("\f");
-            System.out.print(userEntry);
             System.out.println("Enter the x and y coordinates of the space you would like to fill or * to exit : ");
             userEntry = keyboard.nextLine();
             entryArray = userEntry.split(",");
