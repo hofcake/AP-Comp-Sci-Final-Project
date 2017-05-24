@@ -8,7 +8,7 @@ public class Game
         String userEntry = "";
         String[] entryArray;
         while (acceptable == false){
-            acceptable == true;
+            acceptable = true;
             System.out.println("Enter the x and y coordinates of the space you would like to fill or * to exit : ");
             userEntry = keyboard.nextLine();
             entryArray = userEntry.split(",");
