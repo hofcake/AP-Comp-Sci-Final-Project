@@ -4,7 +4,6 @@ public class Game
     Scanner keyboard = new Scanner(System.in);
     public int[] promptForInput(Board gameBoard){
         int[] coordArray = new int[2];
-        int counter = 0;
         boolean acceptable = false;
         String userEntry = "";
         String[] entryArray;
@@ -20,6 +19,8 @@ public class Game
                     acceptable = false;
                 }
             }
+            if(!(gameBoard.checkMark(coordArray[0],coordArray[1])))
+                acceptable = false;
             if((coordArray[0] < gameBoard.size() && coordArray[0] >= 0) && (coordArray[1] < gameBoard.size() && coordArray[1] >= 0)){
                 acceptable = true;
             }
