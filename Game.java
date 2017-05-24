@@ -8,21 +8,24 @@ public class Game
         String userEntry = "";
         String[] entryArray;
         while (acceptable == false){
+            acceptable == true;
             System.out.println("Enter the x and y coordinates of the space you would like to fill or * to exit : ");
             userEntry = keyboard.nextLine();
             entryArray = userEntry.split(",");
             for(int i = entryArray.length - 1; i >= 0; i--){
-                coordArray[i] = Integer.valueOf(entryArray[i]);
+                coordArray[i] = Integer.valueOf(entryArray[i]); //Convert to Integer
             }
-            for (int x = 0; x <= 1; x ++){
-                if(coordArray[x] >= gameBoard.size() || coordArray[x] < 0){
-                    acceptable = false;
-                }
-            }
-            if(!(gameBoard.checkMark(coordArray[0],coordArray[1])))
+            if(coordArray[0] > gameBoard.size()-1){
                 acceptable = false;
-            if((coordArray[0] < gameBoard.size() && coordArray[0] >= 0) && (coordArray[1] < gameBoard.size() && coordArray[1] >= 0)){
-                acceptable = true;
+                System.out.println("Your X cordinate was invalid");
+            }
+            if(coordArray[1] > gameBoard.size()-1){
+                acceptable = false;
+                System.out.println("Your Y conrdinate was invalid");
+            }
+            if(!(gameBoard.checkMark(coordArray[0],coordArray[1]))){
+                acceptable = false;
+                System.out.println("There is already a mark there");
             }
         }
         return coordArray;
