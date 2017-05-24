@@ -24,6 +24,7 @@
         {
             coords[0] = (int) (Math.random() * gameBoard.size());
             coords[1] = (int) (Math.random() * gameBoard.size());
+            full = gameBoard.checkMark(coords[0],coords[1]);
         }
         return coords;
     }
