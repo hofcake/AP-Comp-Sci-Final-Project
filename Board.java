@@ -21,7 +21,7 @@ public class Board
     }
 
     public int size(){
-        return board.length;	
+        return board.length;    
     }
 
     public boolean checkMark(int x, int y){
@@ -58,6 +58,8 @@ public class Board
                 else
                     win = false;
             }
+            if(win)
+                return win;
         }
         return win;
     }
@@ -72,6 +74,8 @@ public class Board
                 else
                     win = false;
             }
+            if(win)
+                return win;
         }
         return win;
     }
