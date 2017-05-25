@@ -1,6 +1,8 @@
 import java.util.*;
 public class Game
 { 
+    int numberWins = 0;
+    int numberAIWins = 0;
     Scanner keyboard = new Scanner(System.in);
     public int[] promptForInput(Board gameBoard){
         int[] coordArray = new int[2];
@@ -34,7 +36,6 @@ public class Game
     public void oneGame(int size, boolean aiFirst){ //true is the AI starting first, false is the human
         Board gameBoard = new Board();
         gameBoard.newBoard(size);
-        boolean win;
         AI theAI = new AI(gameBoard);
         if(aiFirst){
             while(!gameBoard.isWinner()){
@@ -104,7 +105,16 @@ public class Game
         }
         gameBoard.printBoard();
         int winner = gameBoard.getWinner();
-        System.out.print("you win");
+        if (winner == 1){
+        System.out.println("You Win");
+        numberWins ++;
+        System.out.println("Score");
+        System.out.print("You: " + numberWins + " AI: " + numberAIWins);}
+        else if (winner == 1){
+        System.out.print("You Lose");
+        numberAIWins ++;
+        System.out.println("Score");
+        System.out.print("You: " + numberWins + " AI: " + numberAIWins);}
     }
 }
     }
