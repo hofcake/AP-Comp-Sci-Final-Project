@@ -24,11 +24,15 @@
         }
         coords[0] = (int) (Math.random() * gameBoard.size() - 1);
         coords[1] = (int) (Math.random() * gameBoard.size() - 1);
-        while (full != true || coords[0] >= gameBoard.size() || coords[1] >= gameBoard.size())
+        while ((full != true || coords[0] >= gameBoard.size() || coords[1] >= gameBoard.size()) & (gameBoard.isFull()!= true));
         {
             coords[0] = (int) (Math.random() * gameBoard.size() - 1);
             coords[1] = (int) (Math.random() * gameBoard.size() - 1);
             full = gameBoard.checkMark(coords[0],coords[1]);
+        }
+        if (gameBoard.isFull() == true){
+        coords[0] = -1;
+        coords[1] = -1;
         }
         return coords;
     }
