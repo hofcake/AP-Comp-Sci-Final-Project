@@ -11,6 +11,10 @@ public class Game
         int size = Integer.valueOf(keyboard.nextLine());
         while((numberWins < winTotal) || (numberAIWins < winTotal))
             oneGame(size, false);
+        if(numberWins > numberAIWins)
+            System.out.println("YOU WON THE GAME!!!!");
+        else
+            System.out.println("You Lost The Game :P");
     }
     public int[] promptForInput(Board gameBoard){
         int[] coordArray = new int[2];
