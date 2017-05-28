@@ -7,7 +7,7 @@ public class Board
     }
 
     public void newMark(int x, int y, int type){board[board.length-y-1][x] = type;} //0 = nothing, 1 = x, 2 = O
-    
+
     public void removeMark(int x, int y){board[board.length-y-1][x] = 0;}
 
     public void newArrayMark(int[] input, int type){board[board.length-input[1]-1][input[0]] = type;}
@@ -131,30 +131,33 @@ public class Board
 
     public int[] checkHorizontalAlmost(int sign){
         int[] almost = new int[2];
+        int counter = 0;
         int row = 0;
         int column = 0;
         for(int j = 0; j < board[0].length; j++){
             if((board[1][j] == sign)){
                 counter ++;
-            if (counter == board.length){
-            row = 1;
-            column = j;
-            almost[0] = row;
-            almost[1] = column;
-            return almost;
-            }
+                if (counter == board.length){
+                    row = 1;
+                    column = j;
+                    almost[0] = row;
+                    almost[1] = column;
+                    return almost;
+                }
             }
         }
+
         for(int j = 0; j < board[0].length; j++){
             if((board[board.length - 2][j] == sign)){
                 if((board[1][j] == sign)){
-                counter ++;
-                if (counter == board.length){
-                row = board.length - 2;
-                column = j;
-                almost[0] = row;
-                almost[1] = column;
-                return almost;
+                    counter ++;
+                    if (counter == board.length){
+                        row = board.length - 2;
+                        column = j;
+                        almost[0] = row;
+                        almost[1] = column;
+                        return almost;
+                    }
                 }
             }
         }
@@ -166,18 +169,17 @@ public class Board
     public int[] checkVerticalAlmost(int sign){
         int[] almost = new int[2];
         int counter = 0;
-        boolean almost = false;
         int row = 0;
         int column = 0;
         for(int i = 0; i < board[0].length; i++){
             if((board[i][1] == sign)){
                 counter ++;
                 if (counter == board.length){
-                row = i;
-                column = 1;
-                almost[0] = row;
-                almost[1] = column;
-                return almost;
+                    row = i;
+                    column = 1;
+                    almost[0] = row;
+                    almost[1] = column;
+                    return almost;
                 }
             }
         }
@@ -185,18 +187,19 @@ public class Board
             if((board[i][board.length - 2] == sign)){
                 counter ++;
                 if (counter == board.length){
-                row = i;
-                column = board.length - 2;
-                almost[0] = row;
-                almost[1] = column;
-                return almost;
+                    row = i;
+                    column = board.length - 2;
+                    almost[0] = row;
+                    almost[1] = column;
+                    return almost;
+                }
             }
         }
         almost[0] = -1;
         almost[1] = -1;
         return almost;
-    }
 
+    }
     public int[] checkForAlmost(int sign){
         int[] test1 = checkVerticalAlmost(sign);
         if (test1[0] != -1){
