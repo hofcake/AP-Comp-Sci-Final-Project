@@ -65,8 +65,10 @@ public class Game
         }
         if(gameBoard.getWinner() == 1)
             System.out.println("You Won This Round!!!!");
-        else
+        else if (gameBoard.getWinner() == 2)
             System.out.println("You Lost :P");
+        else
+            System.out.println("tie");
         gameBoard.printBoard();
     }
 }
