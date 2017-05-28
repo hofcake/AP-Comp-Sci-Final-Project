@@ -4,14 +4,14 @@ public class Game
     int numberWins = 0;
     int numberAIWins = 0;
     Scanner keyboard = new Scanner(System.in);
-	public void main(){
-		System.out.println("How many points to a win?");
-		int winTotal = Integer.valueOf(keyboard.nextLine());
-		System.out.println("How big would you like the board");
-		int size = Integer.valueOf(keyboard.nextLine());
-		while((numberWins < winTotal) || (numberAIWins < winTotal))
-			oneGame(size, false);
-	}
+    public void main(){
+        System.out.println("How many points to a win?");
+        int winTotal = Integer.valueOf(keyboard.nextLine());
+        System.out.println("How big would you like the board");
+        int size = Integer.valueOf(keyboard.nextLine());
+        while((numberWins < winTotal) || (numberAIWins < winTotal))
+            oneGame(size, false);
+    }
     public int[] promptForInput(Board gameBoard){
         int[] coordArray = new int[2];
         boolean acceptable = false;
@@ -46,19 +46,23 @@ public class Game
         gameBoard.newBoard(size);
         AI theAI = new AI(gameBoard);
         if(aiFirst){
-            while(!gameBoard.isWinner()){
+            while((!gameBoard.isWinner()) && (!gameBoard.isFull())){
                 gameBoard.newArrayMark(theAI.play(), 2);
                 gameBoard.printBoard();
                 gameBoard.newArrayMark(promptForInput(gameBoard), 1);
             }
         }
         else{
-            while(!gameBoard.isWinner()){
+            while((!gameBoard.isWinner()) && (!gameBoard.isFull())){
                 gameBoard.printBoard();
                 gameBoard.newArrayMark(promptForInput(gameBoard),1);
                 gameBoard.newArrayMark(theAI.play(), 2);
             }
         }
+        if(gameBoard.getWinner() == 1)
+            System.out.println("You Won This Round!!!!");
+        else
+            System.out.println("You Lost :P");
         gameBoard.printBoard();
     }
 }
