@@ -25,7 +25,7 @@ public class Board
     }
 
     public boolean checkMark(int x, int y){
-        if(board[y][x] == 0)
+        if(board[board.length-y-1][x] == 0)
             return true;
         return false;
     }
