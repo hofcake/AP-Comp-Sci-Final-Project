@@ -9,17 +9,17 @@
     public int[] play(){
         int[] test = new int[2];
         int[] coords = new int[2];
-        test = defense();
-        if (test[0] != -1){
-            coords = defense();
-            return coords;
-        }
-        test = offense();
-        if (test[1] != -1){
-            coords = offense();
-            return coords;
-        }
         boolean full = gameBoard.checkMark(coords[0],coords[1]);
+        coords = defense();
+        full = gameBoard.checkMark(coords[0],coords[1]);
+        if (coords[0] != -1 && full != false){
+            return coords;
+        }
+        coords = offense();
+        full = gameBoard.checkMark(coords[0],coords[1]);
+        if (coords[0] != -1 && full != false){
+            return coords;
+        }
         while (full != true || coords[0] >= gameBoard.size() || coords[1] >= gameBoard.size())
         {
             coords[0] = (int) (Math.random() * gameBoard.size());
