@@ -51,7 +51,9 @@ public class Game
         AI theAI = new AI(gameBoard);
         if(aiFirst){
             while((!gameBoard.isWinner()) && (!gameBoard.isFull())){
-                gameBoard.newArrayMark(theAI.play(), 2);
+                int[] tempArray = theAI.play();
+                if(tempArray[0] != -1)
+                    gameBoard.newArrayMark(tempArray, 2);
                 gameBoard.printBoard();
                 gameBoard.newArrayMark(promptForInput(gameBoard), 1);
             }
@@ -60,14 +62,16 @@ public class Game
             while((!gameBoard.isWinner()) && (!gameBoard.isFull())){
                 gameBoard.printBoard();
                 gameBoard.newArrayMark(promptForInput(gameBoard),1);
-                gameBoard.newArrayMark(theAI.play(), 2);
+                int[] tempArray = theAI.play();
+                if(tempArray[0] != -1)
+                    gameBoard.newArrayMark(tempArray, 2);
             }
         }
         if(gameBoard.getWinner() == 1){
             System.out.println("You Won This Round!!!!\nPress Enter To Continue");
             keyboard.nextLine();
         }
-        else if (gameBoard.getWinner() == 2){
+        else if(gameBoard.getWinner() == 2){
             System.out.println("You Lost :P\nPress Enter To Continue");
             keyboard.nextLine();
         }
