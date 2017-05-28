@@ -20,6 +20,8 @@
         if (coords[0] != -1 && full != false){
             return coords;
         }
+        coords[0] = (int) (Math.random() * gameBoard.size() - 1);
+        coords[1] = (int) (Math.random() * gameBoard.size() - 1);
         while (full != true || coords[0] >= gameBoard.size() || coords[1] >= gameBoard.size())
         {
             coords[0] = (int) (Math.random() * gameBoard.size() - 1);
