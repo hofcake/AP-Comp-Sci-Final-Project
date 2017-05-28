@@ -134,20 +134,28 @@ public class Board
         int row = 0;
         int column = 0;
         for(int j = 0; j < board[0].length; j++){
-            if((board[1][j] == sign))
-                row = 1;
+            if((board[1][j] == sign)){
+                counter ++;
+            if (counter == board.length){
+            row = 1;
             column = j;
             almost[0] = row;
             almost[1] = column;
             return almost;
+            }
+            }
         }
         for(int j = 0; j < board[0].length; j++){
             if((board[board.length - 2][j] == sign)){
+                if((board[1][j] == sign)){
+                counter ++;
+                if (counter == board.length){
                 row = board.length - 2;
                 column = j;
                 almost[0] = row;
                 almost[1] = column;
                 return almost;
+                }
             }
         }
         almost[0] = -1;
@@ -157,19 +165,26 @@ public class Board
 
     public int[] checkVerticalAlmost(int sign){
         int[] almost = new int[2];
+        int counter = 0;
+        boolean almost = false;
         int row = 0;
         int column = 0;
         for(int i = 0; i < board[0].length; i++){
             if((board[i][1] == sign)){
+                counter ++;
+                if (counter == board.length){
                 row = i;
                 column = 1;
                 almost[0] = row;
                 almost[1] = column;
                 return almost;
+                }
             }
         }
         for(int i = 0; i < board[0].length; i++){
             if((board[i][board.length - 2] == sign)){
+                counter ++;
+                if (counter == board.length){
                 row = i;
                 column = board.length - 2;
                 almost[0] = row;
