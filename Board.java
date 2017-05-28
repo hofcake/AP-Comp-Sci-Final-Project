@@ -137,7 +137,7 @@ public class Board
         for(int j = 0; j < board[0].length; j++){
             if((board[1][j] == sign)){
                 counter ++;
-                if (counter == board.length){
+                if (counter == board.length - 1){
                     row = 1;
                     column = j;
                     almost[0] = row;
@@ -151,7 +151,7 @@ public class Board
             if((board[board.length - 2][j] == sign)){
                 if((board[1][j] == sign)){
                     counter ++;
-                    if (counter == board.length){
+                    if (counter == board.length - 1){
                         row = board.length - 2;
                         column = j;
                         almost[0] = row;
@@ -174,7 +174,7 @@ public class Board
         for(int i = 0; i < board[0].length; i++){
             if((board[i][1] == sign)){
                 counter ++;
-                if (counter == board.length){
+                if (counter == board.length - 1){
                     row = i;
                     column = 1;
                     almost[0] = row;
@@ -186,7 +186,7 @@ public class Board
         for(int i = 0; i < board[0].length; i++){
             if((board[i][board.length - 2] == sign)){
                 counter ++;
-                if (counter == board.length){
+                if (counter == board.length -1){
                     row = i;
                     column = board.length - 2;
                     almost[0] = row;
