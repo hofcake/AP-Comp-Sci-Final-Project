@@ -63,12 +63,18 @@ public class Game
                 gameBoard.newArrayMark(theAI.play(), 2);
             }
         }
-        if(gameBoard.getWinner() == 1)
-            System.out.println("You Won This Round!!!!");
-        else if (gameBoard.getWinner() == 2)
-            System.out.println("You Lost :P");
-        else
-            System.out.println("tie");
+        if(gameBoard.getWinner() == 1){
+            System.out.println("You Won This Round!!!!\nPress Enter To Continue");
+            keyboard.nextLine();
+        }
+        else if (gameBoard.getWinner() == 2){
+            System.out.println("You Lost :P\nPress Enter To Continue");
+            keyboard.nextLine();
+        }
+        else{
+            System.out.println("tie\nPress Enter To Continue");
+            keyboard.nextLine();
+        }
         gameBoard.printBoard();
     }
 }
