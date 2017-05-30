@@ -30,9 +30,9 @@
             coords[1] = (int) (Math.random() * gameBoard.size() - 1);
             full = gameBoard.checkMark(coords[0],coords[1]);
         }
-        if (gameBoard.isFull() == true){
-        coords[0] = -1;
-        coords[1] = -1;
+        if (gameBoard.isFull()){
+        	coords[0] = -1;
+        	coords[1] = -1;
         }
         return coords;
     }
