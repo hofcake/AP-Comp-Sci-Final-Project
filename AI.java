@@ -13,13 +13,12 @@
         coords[1] = (int) (Math.random() * gameBoard.size() - 1);
         boolean full = gameBoard.checkMark(coords[0],coords[1]);
         coords = defense();
-        full = gameBoard.checkMark(coords[0],coords[1]);
-        if (coords[0] != -1 && full != false){
+        if (coords[0] != -1 && gameBoard.checkMark(coords[0],coords[1])){
             return coords;
         }
         coords = offense();
-        full = gameBoard.checkMark(coords[0],coords[1]);
-        if (coords[0] != -1 && full != false){
+        if (coords[0] != -1 && gameBoard.checkMark(coords[0],coords[1])){
+            
             return coords;
         }
         coords[0] = (int) (Math.random() * gameBoard.size() - 1);
