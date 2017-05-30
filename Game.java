@@ -70,10 +70,12 @@ public class Game
         if(gameBoard.getWinner() == 1){
             System.out.println("You Won This Round!!!!\nPress Enter To Continue");
             keyboard.nextLine();
+            numberWins++;
         }
         else if(gameBoard.getWinner() == 2){
             System.out.println("You Lost :P\nPress Enter To Continue");
             keyboard.nextLine();
+            numberAIWins++;
         }
         else{
             System.out.println("tie\nPress Enter To Continue");
