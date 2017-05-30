@@ -54,6 +54,8 @@ public class Game
                 int[] tempArray = theAI.play();
                 if(tempArray[0] != -1)
                     gameBoard.newArrayMark(tempArray, 2);
+                if(gameBoard.isFull() || gameBoard.isWinner())
+                    break;
                 gameBoard.printBoard();
                 gameBoard.newArrayMark(promptForInput(gameBoard), 1);
             }
@@ -62,6 +64,8 @@ public class Game
             while((!gameBoard.isWinner()) && (!gameBoard.isFull())){
                 gameBoard.printBoard();
                 gameBoard.newArrayMark(promptForInput(gameBoard),1);
+                if(gameBoard.isFull() || gameBoard.isWinner())
+                    break;
                 int[] tempArray = theAI.play();
                 if(tempArray[0] != -1)
                     gameBoard.newArrayMark(tempArray, 2);
