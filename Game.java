@@ -5,12 +5,13 @@ public class Game
     int numberAIWins = 0;
     Scanner keyboard = new Scanner(System.in);
     public void main(){
+        System.out.print("\f");
         System.out.println("How many points to a win?");
         int winTotal = Integer.valueOf(keyboard.nextLine());
         System.out.println("How big would you like the board");
         int size = Integer.valueOf(keyboard.nextLine());
         while((numberWins < winTotal) || (numberAIWins < winTotal))
-            oneGame(size, false);
+            oneGame(size);
         if(numberWins > numberAIWins)
             System.out.println("YOU WON THE GAME!!!!");
         else
@@ -45,31 +46,25 @@ public class Game
         return coordArray;
     }
 
-    public void oneGame(int size, boolean aiFirst){ //true is the AI starting first, false is the human
+    public void oneGame(int size){ //true is the AI starting first, false is the human
         Board gameBoard = new Board();
         gameBoard.newBoard(size);
         AI theAI = new AI(gameBoard);
-        if(aiFirst){
-            while((!gameBoard.isWinner()) && (!gameBoard.isFull())){
-                int[] tempArray = theAI.play();
-                if(tempArray[0] != -1)
-                    gameBoard.newArrayMark(tempArray, 2);
-                if(gameBoard.isFull() || gameBoard.isWinner())
-                    break;
-                gameBoard.printBoard();
-                gameBoard.newArrayMark(promptForInput(gameBoard), 1);
-            }
-        }
-        else{
-            while((!gameBoard.isWinner()) && (!gameBoard.isFull())){
-                gameBoard.printBoard();
+        Random rand = new Random();
+        boolean first = rand.nextBoolean();
+        int counter;
+        if(first)
+            counter = 1;
+        else
+            counter = 0;
+        gameBoard.printBoard();
+        while((!gameBoard.isWinner()) && (!gameBoard.isFull())){
+            if(counter%2 == 0)
                 gameBoard.newArrayMark(promptForInput(gameBoard),1);
-                if(gameBoard.isFull() || gameBoard.isWinner())
-                    break;
-                int[] tempArray = theAI.play();
-                if(tempArray[0] != -1)
-                    gameBoard.newArrayMark(tempArray, 2);
-            }
+            else
+                gameBoard.newArrayMark(theAI.play(), 2);
+            gameBoard.printBoard();
+            counter++;
         }
         if(gameBoard.getWinner() == 1){
             System.out.println("You Won This Round!!!!\nPress Enter To Continue");
