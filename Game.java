@@ -33,14 +33,17 @@ public class Game
             if(coordArray[0] > gameBoard.size()-1){
                 acceptable = false;
                 System.out.println("Your X cordinate was invalid");
+                promptForInput(gameBoard);
             }
             if(coordArray[1] > gameBoard.size()-1){
                 acceptable = false;
                 System.out.println("Your Y conrdinate was invalid");
+                promptForInput(gameBoard);
             }
             if(!(gameBoard.checkMark(coordArray[0],coordArray[1]))){
                 acceptable = false;
                 System.out.println("There is already a mark there");
+                promptForInput(gameBoard);
             }
         }
         return coordArray;
