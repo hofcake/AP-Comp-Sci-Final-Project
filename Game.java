@@ -28,22 +28,23 @@ public class Game
             userEntry = keyboard.nextLine();
             entryArray = userEntry.split(",");
             for(int i = entryArray.length - 1; i >= 0; i--){
-                coordArray[i] = Integer.valueOf(entryArray[i]); //Convert to Integer
+                try{coordArray[i] = Integer.valueOf(entryArray[i]);}
+                catch(NumberFormatException nfe){coordArray = promptForInput(gameBoard);}
             }
             if(coordArray[0] > gameBoard.size()-1){
                 acceptable = false;
                 System.out.println("Your X cordinate was invalid");
-                promptForInput(gameBoard);
+                coordArray = promptForInput(gameBoard);
             }
             if(coordArray[1] > gameBoard.size()-1){
                 acceptable = false;
                 System.out.println("Your Y conrdinate was invalid");
-                promptForInput(gameBoard);
+                coordArray = promptForInput(gameBoard);
             }
             if(!(gameBoard.checkMark(coordArray[0],coordArray[1]))){
                 acceptable = false;
                 System.out.println("There is already a mark there");
-                promptForInput(gameBoard);
+                coordArray = promptForInput(gameBoard);
             }
         }
         return coordArray;
