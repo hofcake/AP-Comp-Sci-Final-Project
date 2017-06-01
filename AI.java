@@ -7,15 +7,12 @@ public class AI
     }
 
     public int[] play(){
-        int[] test = new int[2];
         int[] coords = new int[2];
-        coords[0] = (int) (Math.random() * (gameBoard.size() - 1));
-        coords[1] = (int) (Math.random() * (gameBoard.size() - 1));
-        coords = defense();
+        coords = offense();
         if (coords[0] != -1 && gameBoard.checkMark(coords[0],coords[1])){
             return coords;
         }
-        coords = offense();
+        coords = defense();
         if (coords[0] != -1 && gameBoard.checkMark(coords[0],coords[1])){
             return coords;
         }
