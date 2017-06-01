@@ -1,4 +1,4 @@
- public class AI
+public class AI
 {
     Board gameBoard;
     public AI (Board gb)
@@ -18,12 +18,11 @@
         }
         coords = offense();
         if (coords[0] != -1 && gameBoard.checkMark(coords[0],coords[1])){
-            
             return coords;
         }
         coords[0] = (int) (Math.random() * gameBoard.size() - 1);
         coords[1] = (int) (Math.random() * gameBoard.size() - 1);
-        while ((full != true || coords[0] >= gameBoard.size() || coords[1] >= gameBoard.size()) & (gameBoard.isFull()!= true));
+        while ((!gameBoard.checkMark(coords[0],coords[1]) || coords[0] >= gameBoard.size() || coords[1] >= gameBoard.size()) & (gameBoard.isFull()!= true))
         {
             coords[0] = (int) (Math.random() * gameBoard.size() - 1);
             coords[1] = (int) (Math.random() * gameBoard.size() - 1);
