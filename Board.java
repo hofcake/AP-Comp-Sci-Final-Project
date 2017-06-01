@@ -134,26 +134,13 @@ public class Board
         int counter = 0;
         int row = 0;
         int column = 0;
-        for(int j = 0; j < board[0].length; j++){
-            if((board[1][j] == sign)){
-                counter ++;
-                if (counter == board.length - 1){
-                    row = 1;
-                    column = j;
-                    almost[0] = row;
-                    almost[1] = column;
-                    return almost;
-                }
-            }
-        }
-
-        for(int j = 0; j < board[0].length; j++){
-            if((board[board.length - 2][j] == sign)){
-                if((board[1][j] == sign)){
+        for (int r = 0; r < board[0].length; r++){
+            for(int c = 0; c < board[0].length; c++){
+                if((board[r][c] == sign)){
                     counter ++;
-                    if (counter == board.length - 1){
-                        row = board.length - 2;
-                        column = j;
+                    if (counter == board.length){
+                        row = r;
+                        column = c;
                         almost[0] = row;
                         almost[1] = column;
                         return almost;
@@ -171,35 +158,25 @@ public class Board
         int counter = 0;
         int row = 0;
         int column = 0;
-        for(int i = 0; i < board[0].length; i++){
-            if((board[i][1] == sign)){
-                counter ++;
-                if (counter == board.length - 1){
-                    row = i;
-                    column = 1;
-                    almost[0] = row;
-                    almost[1] = column;
-                    return almost;
-                }
-            }
-        }
-        for(int i = 0; i < board[0].length; i++){
-            if((board[i][board.length - 2] == sign)){
-                counter ++;
-                if (counter == board.length -1){
-                    row = i;
-                    column = board.length - 2;
-                    almost[0] = row;
-                    almost[1] = column;
-                    return almost;
+        for (int c = 0; c < board[0].length; c++){
+            for(int r = 0; r < board[0].length; r++){
+                if((board[r][c] == sign)){
+                    counter ++;
+                    if (counter == board.length){
+                        row = r;
+                        column = c;
+                        almost[0] = row;
+                        almost[1] = column;
+                        return almost;
+                    }
                 }
             }
         }
         almost[0] = -1;
         almost[1] = -1;
         return almost;
-
     }
+
     public int[] checkForAlmost(int sign){
         int[] test1 = checkVerticalAlmost(sign);
         if (test1[0] != -1){
