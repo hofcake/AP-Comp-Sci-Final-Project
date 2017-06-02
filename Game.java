@@ -29,20 +29,30 @@ public class Game
             entryArray = userEntry.split(",");
             for(int i = entryArray.length - 1; i >= 0; i--){
                 try{coordArray[i] = Integer.valueOf(entryArray[i]);}
-                catch(NumberFormatException nfe){coordArray = promptForInput(gameBoard);}
+                catch(NumberFormatException nfe){
+                    System.out.print("/n");
+                    gameBoard.printBoard();
+                    System.out.println("Please enter valid coordinates");
+                    coordArray = promptForInput(gameBoard);}
             }
             if(coordArray[0] > gameBoard.size()-1){
                 acceptable = false;
+                System.out.print("/n");
+                gameBoard.printBoard();
                 System.out.println("Your X cordinate was invalid");
                 coordArray = promptForInput(gameBoard);
             }
             if(coordArray[1] > gameBoard.size()-1){
                 acceptable = false;
+                System.out.print("/n");
+                gameBoard.printBoard();
                 System.out.println("Your Y conrdinate was invalid");
                 coordArray = promptForInput(gameBoard);
             }
             if(!(gameBoard.checkMark(coordArray[0],coordArray[1]))){
                 acceptable = false;
+                System.out.print("/n");
+                gameBoard.printBoard();
                 System.out.println("There is already a mark there");
                 coordArray = promptForInput(gameBoard);
             }
