@@ -190,4 +190,5 @@ public class Board
         else{
             return checkHorizontalAlmost(sign);}
     }
+
 }
