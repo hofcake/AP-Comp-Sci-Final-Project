@@ -214,7 +214,7 @@ public class Board
         almost[1] = -1;
         return almost;
     }
-
+    
     public int[] checkForAlmost(int sign){
         int[] test1 = checkVerticalAlmost(sign);
         if (test1[0] != -1){
