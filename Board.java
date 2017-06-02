@@ -161,15 +161,17 @@ public class Board
         for (int c = 0; c < board[0].length; c++){
             for(int r = 0; r < board[0].length; r++){
                 if((board[r][c] == sign)){
-                    counter ++;
-                    if (counter == board.length){
-                        row = r;
-                        column = c;
-                        almost[0] = row;
-                        almost[1] = column;
+                    counter ++;}
+                else{
+                    row = r;
+                    column = c;
+                    almost[0] = row;
+                    almost[1] = column;
+                }
+                if (counter == board.length - 1){
                         return almost;
                     }
-                }
+                
             }
         }
         almost[0] = -1;
