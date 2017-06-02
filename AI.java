@@ -14,16 +14,16 @@ public class AI
         	return coords;
         }
         coords = offense();
-        if (coords[0] != -1 && gameBoard.checkMark(coords[0],coords[1])){
+        if (coords[0] != -1 && gameBoard.checkMarkAI(coords[0],coords[1])){
             return coords;
         }
         coords = defense();
-        if (coords[0] != -1 && gameBoard.checkMark(coords[0],coords[1])){
+        if (coords[0] != -1 && gameBoard.checkMarkAI(coords[0],coords[1])){
             return coords;
         }
         coords[0] = (int) (Math.random() * (gameBoard.size() - 1));
         coords[1] = (int) (Math.random() * (gameBoard.size() - 1));
-        while ((!gameBoard.checkMark(coords[0],coords[1]) || coords[0] >= gameBoard.size() || coords[1] >= gameBoard.size()))
+        while ((!gameBoard.checkMarkAI(coords[0],coords[1]) || coords[0] >= gameBoard.size() || coords[1] >= gameBoard.size()))
         {
             coords[0] = (int) (Math.random() * (gameBoard.size() - 1));
             coords[1] = (int) (Math.random() * (gameBoard.size() - 1));
