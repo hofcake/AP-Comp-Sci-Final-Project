@@ -54,5 +54,4 @@ public class AI
         coordinates[1] = -1;
         return coordinates;
     }
-
 }
