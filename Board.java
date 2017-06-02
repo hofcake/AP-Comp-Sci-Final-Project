@@ -135,18 +135,18 @@ public class Board
         int row = 0;
         int column = 0;
         for (int r = 0; r < board[0].length; r++){
-            for(int c = 0; c < board[0].length; c++){
-                if((board[r][c] == sign)){
-                    counter ++;
-                    if (counter == board.length){
-                        row = r;
-                        column = c;
-                        almost[0] = row;
-                        almost[1] = column;
-                        return almost;
-                    }
+            for (int c = 0; c < board[0].length; c++){
+                if (board[r][c] == sign){
+                    counter ++;}
+                else if (board[r][c] == 0){
+                    almost[0] = r;
+                    almost[1] = c;
+                }
+                if (counter == board[0].length - 1){
+                    return almost;
                 }
             }
+            counter = 0;
         }
         almost[0] = -1;
         almost[1] = -1;
@@ -156,23 +156,19 @@ public class Board
     public int[] checkVerticalAlmost(int sign){
         int[] almost = new int[2];
         int counter = 0;
-        int row = 0;
-        int column = 0;
         for (int c = 0; c < board[0].length; c++){
-            for(int r = 0; r < board[0].length; r++){
-                if((board[r][c] == sign)){
+            for (int r = 0; r < board[0].length; r++){
+                if (board[r][c] == sign){
                     counter ++;}
-                else{
-                    row = r;
-                    column = c;
-                    almost[0] = row;
-                    almost[1] = column;
+                else if (board[r][c] == 0){
+                    almost[0] = r;
+                    almost[1] = c;
                 }
-                if (counter == board.length - 1){
-                        return almost;
-                    }
-                
+                if (counter == board[0].length - 1){
+                    return almost;
+                }
             }
+            counter = 0;
         }
         almost[0] = -1;
         almost[1] = -1;
@@ -186,5 +182,4 @@ public class Board
         else{
             return checkHorizontalAlmost(sign);}
     }
-
 }
