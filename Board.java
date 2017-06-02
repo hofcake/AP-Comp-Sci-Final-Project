@@ -96,9 +96,10 @@ public class Board
                 win = false;
             index++;
         }
-        if(win == true)
+        if(win)
             return true;
         index = board.length-1;
+        win = true;
         while(index >= 0){
             if(board[index][board[0].length-1-index] != sign)
                 win = false;
