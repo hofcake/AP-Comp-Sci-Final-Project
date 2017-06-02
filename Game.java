@@ -11,11 +11,15 @@ public class Game
         System.out.println("");
         System.out.println("How big would you like the board");
         int size = Integer.valueOf(keyboard.nextLine());
+        while(size > 10){
+            System.out.println("Invalid, the size is limited at 10, please enter a valid number.");
+            size = Integer.valueOf(keyboard.nextLine());
+        }
         while((numberWins < winTotal) && (numberAIWins < winTotal)){
             oneGame(size);
             if(numberWins > numberAIWins)
                 System.out.println("YOU WON THE GAME!!!!");
-            else
+                else
                 System.out.println("You Lost The Game :P");
         }
     }
@@ -85,18 +89,30 @@ public class Game
             counter++;
         }
         if(gameBoard.getWinner() == 1){
-            System.out.println("You Won This Round!\nPress Enter To Continue");
-            keyboard.nextLine();
+            System.out.println("You Won This Round!\nPress Enter To Continue or * to Quit");
+            String input = keyboard.nextLine();
+            if(input.equals("*")){
+                System.out.print("\fThanks for Playing!");
+                System.exit(0);
+            }
             numberWins++;
         }
         else if(gameBoard.getWinner() == 2){
-            System.out.println("You Lost This Round!\nPress Enter To Continue");
-            keyboard.nextLine();
+            System.out.println("You Lost This Round!\nPress Enter To Continue or * to Quit");
+            String input = keyboard.nextLine();
+            if(input.equals("*")){
+                System.exit(0);
+                System.out.print("\fThanks for Playing!");
+            }
             numberAIWins++;
         }
         else{
-            System.out.println("You Tied The AI This Round!\nPress Enter To Continue");
-            keyboard.nextLine();
+            System.out.println("You Tied The AI This Round!\nPress Enter To Continue or * to Quit");
+            String input = keyboard.nextLine();
+            if(input.equals("*")){
+                System.exit(0);
+                System.out.print("\fThanks for Playing!");
+            }
         }
         gameBoard.printBoard();
     }
