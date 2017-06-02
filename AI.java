@@ -8,6 +8,11 @@ public class AI
 
     public int[] play(){
         int[] coords = new int[2];
+        if (gameBoard.isFull()){
+        	coords[0] = -1;
+        	coords[1] = -1;
+        	return coords;
+        }
         coords = offense();
         if (coords[0] != -1 && gameBoard.checkMark(coords[0],coords[1])){
             return coords;
@@ -22,10 +27,6 @@ public class AI
         {
             coords[0] = (int) (Math.random() * (gameBoard.size() - 1));
             coords[1] = (int) (Math.random() * (gameBoard.size() - 1));
-        }
-        if (gameBoard.isFull()){
-        	coords[0] = -1;
-        	coords[1] = -1;
         }
         return coords;
     }
@@ -44,7 +45,7 @@ public class AI
 
     public int[] offense(){
         int[] coordinates = new int[2];
-        coordinates = gameBoard.checkForAlmost(1);
+        coordinates = gameBoard.checkForAlmost(2);
         if (coordinates[0] != -1){
             coordinates = gameBoard.checkForAlmost(2);
             return coordinates;
