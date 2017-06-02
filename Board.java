@@ -141,8 +141,6 @@ public class Board
     public int[] checkHorizontalAlmost(int sign){
         int[] almost = new int[2];
         int counter = 0;
-        int row = 0;
-        int column = 0;
         for (int r = 0; r < board[0].length; r++){
             for (int c = 0; c < board[0].length; c++){
                 if (board[r][c] == sign){
@@ -184,12 +182,46 @@ public class Board
         return almost;
     }
 
+    public int[] checkDiagonalAlmost(int sign){
+        int[] almost = new int[2];
+        int counter = 0;
+        int r = 0;
+        for (int c = 0; c < board[0].length; c++){
+            r ++;
+            if (board[r][c] == sign){
+                counter ++;}
+            else if (board[r][c] == 0){
+                almost[0] = r;
+                almost[1] = c;
+            }
+            if (counter == board[0].length - 1){
+                return almost;
+            }
+        }
+        for (int c = board[0].length; c > 0; c--){
+            r ++;
+            if (board[r][c] == sign){
+                counter ++;}
+            else if (board[r][c] == 0){
+                almost[0] = r;
+                almost[1] = c;
+            }
+            if (counter == board[0].length - 1){
+                return almost;
+            }
+        }
+        almost[0] = -1;
+        almost[1] = -1;
+        return almost;
+    }
+
     public int[] checkForAlmost(int sign){
         int[] test1 = checkVerticalAlmost(sign);
         if (test1[0] != -1){
             return checkVerticalAlmost(sign);}
-        else{
+        test1 = checkHorizontalAlmost(sign);
+        if (test1[0] != -1){
             return checkHorizontalAlmost(sign);}
+        else{
+            return checkDiagonalAlmost(sign);}
     }
-
-}
