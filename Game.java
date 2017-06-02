@@ -11,12 +11,13 @@ public class Game
         System.out.println("");
         System.out.println("How big would you like the board");
         int size = Integer.valueOf(keyboard.nextLine());
-        while((numberWins < winTotal) || (numberAIWins < winTotal))
+        while((numberWins < winTotal) && (numberAIWins < winTotal)){
             oneGame(size);
-        if(numberWins > numberAIWins)
-            System.out.println("YOU WON THE GAME!!!!");
-        else
-            System.out.println("You Lost The Game :P");
+            if(numberWins > numberAIWins)
+                System.out.println("YOU WON THE GAME!!!!");
+            else
+                System.out.println("You Lost The Game :P");
+        }
     }
 
     public int[] promptForInput(Board gameBoard){
