@@ -7,7 +7,9 @@ public class Board
     }
 
     public void newMark(int x, int y, int type){board[board.length-y-1][x] = type;} //0 = nothing, 1 = x, 2 = O
-
+    
+    public void newAIArrayMark(int[] input, int type){board[input[0]][input[1]] = type;} //0 = nothing, 1 = x, 2 = O
+    
     public void removeMark(int x, int y){board[board.length-y-1][x] = 0;}
 
     public void newArrayMark(int[] input, int type){board[board.length-input[1]-1][input[0]] = type;}
@@ -26,6 +28,12 @@ public class Board
 
     public boolean checkMark(int x, int y){
         if(board[board.length-y-1][x] == 0)
+            return true;
+        return false;
+    }
+    
+    public boolean checkMarkAI(int x, int y){
+        if(board[x][y] == 0)
             return true;
         return false;
     }
