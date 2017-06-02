@@ -1,7 +1,6 @@
 public class Board
 {
     public int[][] board;
-    public final String alpha = "ABCDEFGHIJKLMNOPQRTUVWXYZ"; //possibly to be used later
     public void newBoard(int size){
         board = new int[size][size];
     }
@@ -185,7 +184,7 @@ public class Board
     public int[] checkDiagonalAlmost(int sign){
         int[] almost = new int[2];
         int counter = 0;
-        int r = 0;
+        int r = -1;
         for (int c = 0; c < board[0].length; c++){
             r ++;
             if (board[r][c] == sign){
@@ -198,7 +197,8 @@ public class Board
                 return almost;
             }
         }
-        for (int c = board[0].length; c > 0; c--){
+        r = -1;
+        for (int c = board[0].length - 1; c > 0; c--){
             r ++;
             if (board[r][c] == sign){
                 counter ++;}
